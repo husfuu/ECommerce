@@ -10,14 +10,6 @@ interface HomeProps {
 }
 
 const Home = ({ productsData, bannerData }: HomeProps) => {
-  // console.log('product', productsData);
-  // console.log(typeof productsData);
-  // console.log('banner', bannerData);
-  // console.log(typeof bannerData);
-  // console.log('banner');
-  // console.log(urlFor(bannerData[0].image));
-  // console.log('product');
-  // console.log(urlFor(productsData[0].image));
   return (
     <>
       <HeroBanner
@@ -43,7 +35,7 @@ const Home = ({ productsData, bannerData }: HomeProps) => {
             key={product._id}
             name={product.name}
             price={product.price}
-            slug={product.slug}
+            slug={product.slug.current}
             image={urlFor(product.image && product.image[0]).url()}
           />
         ))}
